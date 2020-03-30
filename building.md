@@ -1,0 +1,56 @@
+---
+title: 博客创建过程与总结
+date: 2020-03-30 13:11:58
+tags:
+- 记录
+categories: 技术
+---
+
+至此, 博客建站算是完成了, 整个过程历时三天, 由于一些强迫症修各种细节花了我不少时间. 
+
+## 主题
+
+本站使用的主题是[我改过的 fluid](https://github.com/karuboniru/hexo-theme-fluid), 改动可以看链接里面的 [commits](https://github.com/karuboniru/hexo-theme-fluid), 其中有些改动已经提了 Pull Request 并且已经被接受, 但是还有一些并非 bug 修复或者是改进, 只是个人喜好, 于是就不 PR 了. 
+
+我的版本的 fluid 相对[原版](https://github.com/fluid-dev/hexo-theme-fluid)改动(没有合并进入 master 的)有以下 :
+
+- 添加了 PWA 支持, 本站现在是 PWA 网站, 你甚至可以作为应用安装它; 
+- 尽可能使用 [cdnjs](https://cdnjs.com/) 作为静态脚本来源, 这是为了即将到来的 HTTP/3 做准备, 静态资源来自同一个源能借助 0-RTT加速访问;
+- 修复了统计相关的(可能影响加载速度的)一个轻微 bug, 合并到了原项目的 dev 分支.
+
+因为一些静态资源被我放到了站点内部, 于是大家想要使用我修改之后的主题需要一并带上 `source/css` 里面的东西. ~~真的有人会用吗?~~
+
+## PWA
+
+本站有完全的 PWA [支持](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fyanqiyu.info%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext#pwa):
+
+![批注-2020-03-30-130142](2020-03-30-130142.webp)
+
+PWA 支持是由 [hexo-offline](https://github.com/JLHwung/hexo-offline) 包提供的代码. PWA 意味着只要加载过, 缓存还在, 之后加载就会很快
+
+# 持续集成
+
+本站使用 [Hexo](https://hexo.io), 作为静态网站, 需要从 Markdown 生成 HTML. 为了方便到处写东西而不需要使用电脑, 于是我~~白嫖~~使用了 [GitHub Actions](https://github.com/features/actions), 对于项目源代码分割成了三个仓库:
+
+- [主题](https://github.com/karuboniru/hexo-theme-fluid)
+- [文章](https://github.com/karuboniru/blog_md): 每次 push 触发更新 Hexo 工作区的 `submodule` 并push, 并触发 Hexo 工作区的持续集成;
+- [Hexo 工作区](https://github.com/karuboniru/blog_ci): 每次 push 更新网页. 
+
+然后每次添加文章只需要修改[文章](https://github.com/karuboniru/blog_md)这个仓库就能保证其他东西跟着更新了. 但是主题不做持续集成是因为给我觉得修改主题的事情还是先本地看下效果为好, 免得翻车.
+
+由于层层缓存的存在, 更新需要数分钟才能被看到, 我也没得法, 我也懒得管.
+
+## 写东西
+
+写东西就用神奇的 [Typora](https://typora.io/), 支持所见即所得的 Markdown 编辑器, 这个我要安利一波! 甚至于可以用来做课堂笔记! 
+
+## 奇妙的 BUG
+
+在这里 `hexo-asset-image` 不能正确地生成图片链接, 要换成 `hexo-asset-image-fix`. 这是我全程遇到的最奇妙的 BUG 了.
+
+
+
+本文也算不上是教程, 之所以我不写教程是因为网上大多有相关教程, 魔改主题这件事情我也是新手, 基本是猜着语法改, 也没与可学习的.
+
+
+
