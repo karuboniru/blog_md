@@ -22,7 +22,7 @@ jobs:
       run: |
         git clone --recurse-submodules https://${{ secrets.GH_TOKEN }}@github.com/karuboniru/blog_ci.git
         cd blog_ci/source/_posts
-        git pull
+        git pull https://github.com/karuboniru/blog_md.git master
         cd ../..
         git add .
         git commit -m "update submodule by $GITHUB_REF"
