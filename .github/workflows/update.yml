@@ -20,7 +20,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: update blog-ci
       run: |
-        git clone --recurse-submodules https://${{ GH_TOKEN }}@github.com/karuboniru/blog_ci.git
+        git clone --recurse-submodules https://${{ secrets.GH_TOKEN }}@github.com/karuboniru/blog_ci.git
         cd blog_ci/source/_posts
         git pull
         cd ../..
