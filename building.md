@@ -28,7 +28,7 @@ categories: 技术
 
 PWA 支持是由 [hexo-offline](https://github.com/JLHwung/hexo-offline) 包提供的代码. PWA 意味着只要加载过, 缓存还在, 之后加载就会很快
 
-# 持续集成
+## 持续集成
 
 本站使用 [Hexo](https://hexo.io), 作为静态网站, 需要从 Markdown 生成 HTML. 为了方便到处写东西而不需要使用电脑, 于是我~~白嫖~~使用了 [GitHub Actions](https://github.com/features/actions), 对于项目源代码分割成了三个仓库:
 
