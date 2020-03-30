@@ -25,5 +25,5 @@ jobs:
         git pull
         cd ../..
         git add .
-        git commit -m "update submodule by ${{ GITHUB_REF }}"
+        git commit -m "update submodule by $GITHUB_REF"
         git push
