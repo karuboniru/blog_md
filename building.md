@@ -22,6 +22,10 @@ categories: 技术
 
 但是真的有人想用的话可以直接 fork [blog_ci](https://github.com/karuboniru/blog_ci) 仓库, 改下配置文件和持续集成脚本, 设置好 secrets, 应该就能用了.
 
+### 文章页面 banner 随机图片
+
+banner 接口用的是[阿珏博客](https://www.52ecy.cn/post-125.html), 这个接口在境外可能速度不够舒适, 但是真香.
+
 ## PWA
 
 本站有完全的 PWA [支持](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fyanqiyu.info%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext#pwa):
