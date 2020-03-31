@@ -24,7 +24,7 @@ categories: 技术
 
 ### 文章页面 banner 随机图片
 
-banner 接口用的是[阿珏博客](https://www.52ecy.cn/post-125.html), 这个接口在境外可能速度不够舒适, 但是真香.
+banner 接口用的是[阿珏博客](https://www.52ecy.cn/post-125.html). 使用超级简单, 大佬有图床就是了不起.
 
 ## PWA
 
