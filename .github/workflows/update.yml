@@ -27,5 +27,5 @@ jobs:
         git pull https://github.com/karuboniru/blog_md.git master
         cd ../..
         git add .
-        git commit -m "update submodule by $GITHUB_REF"
+        git commit -m "update submodule by $GITHUB_RUN_NUMBER at blog_md"
         git push
