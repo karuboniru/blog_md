@@ -101,12 +101,12 @@ $$
 $$
 \begin{aligned}
 0 = \delta S&= \int \dif^4x\partial_\mu \left[\mathcal{L}\delta x^\mu + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} (\delta - \delta x^\nu\partial_\nu)\phi\right] \\
-& = \int \dif^4x\partial_\mu\left[ \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi \right]
+& = \int \dif^4x\partial_\mu\left[ \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi \right]
 \end{aligned}
 $$
 这样, 就得到了一个守恒流, 也就是本文的核心: 
 $$
-j^\mu = \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi
+j^\mu = \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi
 $$
 
 ### 诺特荷
@@ -130,17 +130,17 @@ $$
 > 那么, 诺特流就会升级成为能量动量张量
 > 原来的守恒流长这样
 > $$
-> j^\mu = \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi
+> j^\mu = \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi
 > $$
 > 去掉场的本身的变换: `$ \delta\phi = 0$`, 考虑到`$ \delta x^\nu = a^\nu$` 的任意性
 > $$
-> \partial_\mu\left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_\nu \phi\right) = 0
+> \partial_\mu\left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right) = 0
 > $$
 > 这就是场论的能量动量张量: 
 > $$
 > \begin{aligned}
-> T^{\mu}_{\nu} =  \left(- \mathcal{L}\delta^\nu_\mu + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_\nu \phi\right) \\
-> T^{\mu\nu} =  \left(- \mathcal{L}\eta^{\mu\nu} + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta^\nu \phi\right)
+> T^{\mu}_{\nu} =  \left(- \mathcal{L}\delta^\nu_\mu + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right) \\
+> T^{\mu\nu} =  \left(- \mathcal{L}\eta^{\mu\nu} + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial^\nu \phi\right)
 > \end{aligned}
 > $$
 
