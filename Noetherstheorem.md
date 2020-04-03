@@ -83,7 +83,7 @@ $$
 \begin{aligned}
 \delta \mathcal{L} &= \delta x^\mu\partial_\mu\mathcal{L} + \delta_0\mathcal{L}\\
 &= \delta x^\mu \partial_\mu\mathcal{L}+ \frac{\partial\mathcal{L}}{\partial\phi}\delta_0\phi + \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)}\delta_0(\partial_\mu\phi) \\
-&= \delta x^\mu \partial_\mu\mathcal{L} + \left[ \frac{\partial\mathcal{L}}{\partial \phi} - \partial_\mu \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \right] \delta_0\phi + \partial_\mu\left( \frac{\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_0\phi \right)
+&= \delta x^\mu \partial_\mu\mathcal{L} + \left[ \frac{\partial\mathcal{L}}{\partial \phi} - \partial_\mu \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \right] \delta_0\phi + \partial_\mu\left( \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_0\phi \right)
 \end{aligned}
 $$
 最后一步是使用了分部积分, 并且使用了 `$\delta_0(\partial_\mu\phi) = \partial_\mu(\delta_0\mu\phi)$`. 同时注意到有: 
