@@ -31,7 +31,7 @@ banner 接口用的是[阿珏博客](https://www.52ecy.cn/post-125.html). 使用
 
 本站有完全的 PWA [支持](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fyanqiyu.info%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext#pwa):
 
-![批注-2020-03-30-130142](2020-03-30-130142.webp)
+![批注-2020-03-30-130142](https://cdn.jsdelivr.net/gh/karuboniru/blog_md@master/building/2020-03-30-130142.webp)
 
 PWA 支持是由 [hexo-offline](https://github.com/JLHwung/hexo-offline) 包提供的代码. PWA 意味着只要加载过, 缓存还在, 之后加载就会很快
 
