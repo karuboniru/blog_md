@@ -15,8 +15,9 @@ categories: 技术
 我的版本的 fluid 相对[原版](https://github.com/fluid-dev/hexo-theme-fluid)改动(没有合并进入 master 的)有以下 :
 
 - 添加了 PWA 支持, 本站现在是 PWA 网站, 你甚至可以作为应用安装它; 
-- 尽可能使用 [cdnjs](https://cdnjs.com/) 作为静态脚本来源, 这是为了即将到来的 HTTP/3 做准备, 静态资源来自同一个源能借助 0-RTT加速访问;
+- ~~尽可能使用 [cdnjs](https://cdnjs.com/) 作为静态脚本来源, 这是为了即将到来的 HTTP/3 做准备, 静态资源来自同一个源能借助 0-RTT加速访问;~~ 换成了 jsdeliver, CDNjs 太慢了, jsdeliver 在全球都有节点, 是好东西.
 - ~~修复了统计相关的(可能影响加载速度的)一个轻微 bug, 合并到了原项目的 dev 分支.~~(也进入master了)
+- MathJax 升级到 MathJax 3.0.1, 加载及渲染更快. 
 
 因为一些静态资源被我放到了站点内部, 于是大家想要使用我修改之后的主题需要一并带上 `source/css` 里面的东西. ~~真的有人会用吗?~~
 
