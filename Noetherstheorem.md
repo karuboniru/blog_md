@@ -28,7 +28,7 @@ $$
 
 接下来我们会更加自然的考虑后者, 因为后者更加容易给出明确的数学表示. 
 
-也就是时空点 `$P$`, 坐标`$x^\mu$`, 场`$f\left(x^\mu\right)$`, 变为坐标`$x'^\mu$`, 场`$f'\left(x'^\mu\right)$`, 
+也就是时空点 `$P$`, 坐标 `$x^\mu$` , 场 `$f\left(x^\mu\right)$` , 变为坐标 `$x'^\mu$` , 场 `$f'\left(x'^\mu\right)$` , 
 
 考虑在一个无穷小变换 `$x' \to x + \delta x$` 下, 场的变换可以写作:
 $$
@@ -48,7 +48,7 @@ $$
 $$
 \delta = \delta_0 + \delta x^\mu\partial_\mu
 $$
-其中`$\delta_0 f$` 表述场本身的变化, 而 `$\delta x^\mu\partial_\mu f$` 表示由于点坐标的变化带来的变化. 
+其中 `$\delta_0 f$` 表述场本身的变化, 而 `$\delta x^\mu\partial_\mu f$` 表示由于点坐标的变化带来的变化. 
 
 > 对于时空平移变换 `$ x'^\mu = x^\mu + a^\mu,\,\delta\phi = 0$`
 > 
@@ -61,7 +61,7 @@ $$
 > \phi'(x^\mu) = \phi(x^\mu - a^\mu)
 > $$
 
-在此之外, 场可能有内禀变换, 此时`$\delta x = 0$`, 变化的只有场.
+在此之外, 场可能有内禀变换, 此时 `$\delta x = 0$`, 变化的只有场.
 ## 诺特流的推导
 
 考虑一个场, 其作用量可以写作
@@ -132,7 +132,7 @@ $$
 > $$
 > j^\mu = \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi
 > $$
-> 去掉场的本身的变换: `$ \delta\phi = 0$`, 考虑到`$ \delta x^\nu = a^\nu$` 的任意性
+> 去掉场的本身的变换: `$ \delta\phi = 0$`, 考虑到 `$ \delta x^\nu = a^\nu$` 的任意性
 > $$
 > \partial_\mu\left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right) = 0
 > $$

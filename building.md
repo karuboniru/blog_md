@@ -10,9 +10,9 @@ categories: 技术
 
 ## 主题
 
-本站使用的主题是[我改过的 fluid](https://github.com/karuboniru/hexo-theme-fluid), 改动可以看链接里面的 [commits](https://github.com/karuboniru/hexo-theme-fluid), 其中有些改动已经提了 Pull Request 并且已经被接受, 但是还有一些并非 bug 修复或者是改进, 只是个人喜好, 于是就不 PR 了. 
+本站使用的主题是 [我改过的 fluid](https://github.com/karuboniru/hexo-theme-fluid), 改动可以看链接里面的 [commits](https://github.com/karuboniru/hexo-theme-fluid), 其中有些改动已经提了 Pull Request 并且已经被接受, 但是还有一些并非 bug 修复或者是改进, 只是个人喜好, 于是就不 PR 了. 
 
-我的版本的 fluid 相对[原版](https://github.com/fluid-dev/hexo-theme-fluid)改动(没有合并进入 master 的)有以下 :
+我的版本的 fluid 相对 [原版](https://github.com/fluid-dev/hexo-theme-fluid) 改动(没有合并进入 master 的)有以下 :
 
 - 添加了 PWA 支持, 本站现在是 PWA 网站, 你甚至可以作为应用安装它; 
 - ~~尽可能使用 [cdnjs](https://cdnjs.com/) 作为静态脚本来源, 这是为了即将到来的 HTTP/3 做准备, 静态资源来自同一个源能借助 0-RTT加速访问;~~ 换成了 jsdelivr, CDNjs 太慢了, jsdelivr 在全球都有节点, 是好东西.
@@ -25,7 +25,7 @@ categories: 技术
 
 ### 文章页面 banner 随机图片
 
-banner 接口用的是[阿珏博客](https://www.52ecy.cn/post-125.html). 使用超级简单, 大佬有图床就是了不起.
+banner 接口用的是 [阿珏博客](https://www.52ecy.cn/post-125.html) 提供的 API. 使用超级简单, 感谢大佬.
 
 ## PWA
 
@@ -43,7 +43,7 @@ PWA 支持是由 [hexo-offline](https://github.com/JLHwung/hexo-offline) 包提�
 - [文章](https://github.com/karuboniru/blog_md): 每次 push 触发更新 Hexo 工作区的 `submodule` 并push, 并触发 Hexo 工作区的持续集成;
 - [Hexo 工作区](https://github.com/karuboniru/blog_ci): 每次 push 更新网页. 
 
-然后每次添加文章只需要修改[文章](https://github.com/karuboniru/blog_md)这个仓库就能保证其他东西跟着更新了. 但是主题不做持续集成是因为给我觉得修改主题的事情还是先本地看下效果为好, 免得翻车.
+然后每次添加文章只需要修改 [文章](https://github.com/karuboniru/blog_md) 这个仓库就能保证其他东西跟着更新了. 但是主题不做持续集成是因为给我觉得修改主题的事情还是先本地看下效果为好, 免得翻车.
 
 由于层层缓存的存在, 更新需要数分钟才能被看到, 我也没得法, 我也懒得管.
 

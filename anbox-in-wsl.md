@@ -10,7 +10,7 @@ categories: 技术
 
 ## 介绍
 
-这本来是我之前在 reddit 上面发的一个[帖子](https://www.reddit.com/r/bashonubuntuonwindows/comments/eofn5s/run_anbox_on_wsl_2/). 现在干脆把它重新写成中文, 姑且算是给自己引流.
+这本来是我之前在 reddit 上面发的一个 [帖子](https://www.reddit.com/r/bashonubuntuonwindows/comments/eofn5s/run_anbox_on_wsl_2/). 现在干脆把它重新写成中文, 姑且算是给自己引流.
 
 [Anbox](https://anbox.io/) 实现了基于 lxc 的 Android on Linux 支持, 由于 WSL 2 就是完整的 Linux, 于是稍加折腾就能跑起来了. 
 
@@ -94,6 +94,6 @@ Ubuntu 上我也试过, **但是不能正常显示(窗口啥都没有)**, 但是
 
 ## 当前问题
 
-* 试图打开设置首页铁定会崩溃, 可能和[这个](https://github.com/anbox/anbox-modules/issues/41)有关
+* 试图打开设置首页铁定会崩溃, 可能和 [这个](https://github.com/anbox/anbox-modules/issues/41) 有关
 * Ubuntu 下不好使, 虽然可能和 SDL 之类的有关, 但是我也不想管
 * 没图形加速

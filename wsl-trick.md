@@ -21,4 +21,4 @@ Linux 下有些程序会通过 dbus 来启动, 如果没有 dbus 的话就会出
 
 ## 经过修改的 xdg-open
 
-[这里](https://github.com/cpbotha/xdg-open-wsl)有魔改版的 `xdg-open`, 放到你的可执行文件路径里面, 就可以用 `xdg-open` 命令调用 Windows 下的程序进行操作了(例如 jupyter 打开浏览器以及 texdoc 打开帮助文档 pdf).
+[这里](https://github.com/cpbotha/xdg-open-wsl) 有魔改版的 `xdg-open`, 放到你的可执行文件路径里面, 就可以用 `xdg-open` 命令调用 Windows 下的程序进行操作了(例如 jupyter 打开浏览器以及 texdoc 打开帮助文档 pdf).
