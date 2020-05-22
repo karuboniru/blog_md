@@ -87,6 +87,7 @@ ip route add default dev eth0 via 192.168.250.1
 ip rule add pref 32766 table main
 ip rule add pref 32767 table local
 ```
+
 ## 效果
 
 ![运行截图](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200404211503.webp)
