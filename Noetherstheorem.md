@@ -159,6 +159,6 @@ $$
 >$$
 > 它对应的守恒荷就是:
 >$$
-> Q = \int \dd[3]{j^0} = i\int \dd[3]{x}\left(\dot{\phi}^*\phi - \phi^*\dot{\phi}\right)
+> Q = \int \dd[3]{x}j^0 = i\int \dd[3]{x}\left(\dot{\phi}^*\phi - \phi^*\dot{\phi}\right)
 >$$
 > 可以通过正则量子化计算发现这个守恒就对应电荷守恒.
