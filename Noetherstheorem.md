@@ -16,11 +16,12 @@ categories: 物理
 
 守恒流是满足:
 $$
+\require{physics}
 \partial_\mu j^\mu = 0
 $$
 的一个场.
 
-### 对称变换的描述: 场在对称变换下的描述
+### 场在对称变换下的描述
 
 而对称性的考量数学上就有两种看法
 
@@ -68,15 +69,14 @@ $$
 
 考虑一个场, 其作用量可以写作
 $$
-\newcommand{\dif}{\mathop{}\!\mathrm{d}}
-S(\phi(x)) = \int \dif^4x \mathcal{L}(\phi, \partial_\mu\phi,x)
+S(\phi(x)) = \int \dd[4]{x} \mathcal{L}(\phi, \partial_\mu\phi,x)
 $$
 
 系统的演化路径遵循$\delta S = 0$, 则:
 $$
 \begin{aligned}
-0 = \delta S &= \int\left[\delta(\dif^4x)\mathcal{L}+\dif^4x\delta\mathcal{L}\right]\\
-& = \int\dif^4x(\partial_\mu\delta x^\mu\mathcal{L}+\delta\mathcal{L})
+0 = \delta S &= \int\left[\delta(\dd[4]{x})\mathcal{L}+\dd[4]{x}\delta\mathcal{L}\right]\\
+& = \int\dd[4]{x}(\partial_\mu\delta x^\mu\mathcal{L}+\delta\mathcal{L})
 \end{aligned}
 $$
 而根据前文以及链式法则
@@ -94,15 +94,15 @@ $$
 这是场的欧拉-拉格朗日运动方程. 则
 $$
 \begin{aligned}
-0 = \delta S & = \int \dif^4x \partial_\mu\left(\delta x^\mu \mathcal{L}  + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_0\phi\right)
+0 = \delta S & = \int \dd[4]{x} \partial_\mu\left(\delta x^\mu \mathcal{L}  + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_0\phi\right)
 \end{aligned}
 $$
 考虑到变分的任意性, 则有$\partial_\mu\left(\delta x^\mu \mathcal{L}  + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\delta_0\phi\right) = 0$, 对扩号内的部分使用$\delta_0 = \delta - \delta x^\mu\partial_\mu$, 则:
 
 $$
 \begin{aligned}
-0 = \delta S&= \int \dif^4x\partial_\mu \left[\mathcal{L}\delta x^\mu + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} (\delta - \delta x^\nu\partial_\nu)\phi\right] \\
-& = \int \dif^4x\partial_\mu\left[ \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi \right]
+0 = \delta S&= \int \dd[4]{x}\partial_\mu \left[\mathcal{L}\delta x^\mu + \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} (\delta - \delta x^\nu\partial_\nu)\phi\right] \\
+& = \int \dd[4]{x}\partial_\mu\left[ \left(\mathcal{L}\delta^\nu_\mu - \frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)}\partial_\nu \phi\right)\delta x^\nu +\frac{\partial\mathcal{L}}{\partial (\partial_\mu \phi)} \delta\phi \right]
 \end{aligned}
 $$
 这样, 就得到了一个守恒流, 也就是本文的核心: 
@@ -114,14 +114,14 @@ $$
 对于一个在有限空间内分布的流(无穷远处, 场应该趋近于零, 这是其物理意义要求的), 考虑场的等时变分
 $$
 \begin{aligned}
-0 	& = \int \dif^4 x\partial_\mu j^\mu		\\
-	& = \int_{t_1}^{t_2} \dif x^0 \int \dif x^3 \left(\partial_0 j^0 + \nabla \cdot \vec{j}\right)		\\
-	& =  \int_{t_1}^{t_2} \dif x^0 \partial_0 \int \dif^3 j^0		\\
+0 	& = \int \dd[4]{x}\partial_\mu j^\mu		\\
+	& = \int_{t_1}^{t_2} \dd{x}^0 \int \dd{x}^3 \left(\partial_0 j^0 + \nabla \cdot \vec{j}\right)		\\
+	& =  \int_{t_1}^{t_2} \dd{x}^0 \partial_0 \int \dd[3]{x}j^0		\\
  	& = Q(t_2) - Q(t_1) 
 \end{aligned}
 $$
 
-则$Q = \int \dif^3 j^0$就是诺特荷, 是在这个对称性给出的守恒量.
+则$Q = \int \dd[3]{x}j^0$就是诺特荷, 是在这个对称性给出的守恒量.
 
 ## 举例
 
@@ -159,6 +159,6 @@ $$
 >$$
 > 它对应的守恒荷就是:
 >$$
-> Q = \int \dif^3 j^0 = i\int \dif^3 x\left(\dot{\phi}^*\phi - \phi^*\dot{\phi}\right)
+> Q = \int \dd[3]{j^0} = i\int \dd[3]{x}\left(\dot{\phi}^*\phi - \phi^*\dot{\phi}\right)
 >$$
 > 可以通过正则量子化计算发现这个守恒就对应电荷守恒.
