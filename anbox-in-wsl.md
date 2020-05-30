@@ -75,13 +75,13 @@ $ export XDG_RUNTIME_DIR=/tmp/runtime-user
 ```
 ### 运行!
 ``` Bash
-$ anbox-bridge.sh start
+$ sudo /usr/share/anbox/anbox-bridge.sh start
 $ sudo daemonize /usr/bin/anbox container-manager --daemon --privileged --data-path=/var/lib/anbox
 $ anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity
 ```
 ## 修复网络
 
-使用 `anbox/scripts/anbox-shell.sh` 的脚本获得 Anbox 中的管理员权限
+使用 `/usr/share/anbox/anbox-shell.sh` 的脚本获得 Anbox 中的管理员权限
 ``` Bash
 ip route add default dev eth0 via 192.168.250.1
 ip rule add pref 32766 table main
