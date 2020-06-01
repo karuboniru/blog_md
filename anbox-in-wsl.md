@@ -23,6 +23,7 @@ Ubuntu 上我也试过, **但是不能正常显示(窗口啥都没有)**, 但是
 $ sudo dnf copr enable yanqiyu/anbox
 $ sudo dnf install anbox
 ```
+
 ## 从源代码编译
 
 你需要 [anbox-modules](https://github.com/anbox/anbox-modules) 和 [kernel](https://github.com/microsoft/WSL2-Linux-Kernel/releases) 的源代码. 内核源代码选择和你的 WSL 一致的版本(`uname -r`).
@@ -59,6 +60,7 @@ $ sudo modprobe binder_linux
 $ lsmod | grep -e ashmem_linux -e binder_linux
 $ ls -alh /dev/binder /dev/ashmem
 ```
+
 ## 安装 Android 镜像
 
 在 [这里](https://build.anbox.io/android-images) 下载 Android 镜像
