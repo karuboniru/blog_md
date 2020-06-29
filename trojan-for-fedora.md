@@ -1,10 +1,10 @@
 ---
-title: Trojan for Fedora
+title: Trojan for Fedora and EPEL
 date: 2020-06-21 09:12:50
 tags: 打包
 categories: 瞎折腾
 ---
-[Trojan][1] 即将在 Fedora 操作系统官方源可用🎉.
+[Trojan][1] 即将在 Fedora 操作系统官方源(含 EPEL 8)可用🎉.
 
 详情可见 [Fedora Bodhi][2], 以及 [Trojan issue #462][3]. 
 
@@ -21,7 +21,7 @@ Size:    1.54 MiB
 
 
 [1]: https://github.com/trojan-gfw/trojan/
-[2]: https://bodhi.fedoraproject.org/?term=trojan
+[2]: https://bodhi.fedoraproject.org/updates/?search=trojan
 [3]: https://github.com/trojan-gfw/trojan/issues/462
 [4]: https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&classification=Fedora&component=trojan&product=Fedora&product=Fedora%20EPEL
 [5]: mailto:yanqiyu@fedoraproject.org
