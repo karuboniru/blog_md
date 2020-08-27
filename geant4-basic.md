@@ -60,4 +60,4 @@ source /path/to/geant4.sh
 - `EventAction` 派生自 `G4UserEventAction`, 描述的是一个模拟的 Event 的过程, 一般处理的事情是按照设计统计每个 Step 中物理过程的能量沉积等数据, 并填充 tuple;
 - `SteppingAction` 派生自 `G4UserSteppingAction`, 处理模拟过程每个 step, 每个 step 中 `UserSteppingAction` 都会被调用, 并传入一个 `G4Step` 参数, 可以获取这个 step 中的物理过程.
 - `HistoManager`, 它一般是负责保存直方图到 `ROOT` 文件以供进一步操作的;
-- 对于一些类来说, 还可以有它的 `messenger` 顾名思义, 就是用来取得更详细的信息之用.
+- 对于一些类来说, 还可以有它的 `messenger` 用于处理命令.
