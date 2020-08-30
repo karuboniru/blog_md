@@ -11,8 +11,6 @@ categories: 打包
 
 测试大概明天或者后天上线，想要参与就`dnf upgrade --enablerepo=updates-testing`来进行安装。
 
-那我等不及，现在就想用怎么办？——请启用 testing 仓库进行安装。
-
 ***
 
 ## 建议安装的包
@@ -70,6 +68,7 @@ $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
 
 ### 图形界面配置工具
 `fcitx5-configtool` 含有 `fcitx5-config-qt`，安装之后`fcitx5-config`就会调用之。另外还支持KCM配置，当然是KDE用户专享了。
+
 ## Bug Report
 遇到问题，建议先在[Bugzilla]反馈，如果是我的锅（打包翻车），我就修。如果是囧脸的锅，那我就找囧脸修。
 
