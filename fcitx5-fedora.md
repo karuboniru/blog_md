@@ -78,7 +78,7 @@ $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
 当然要是你能判断是囧脸的锅，建议直接去上游找囧脸修。
 
 ## TODO List
- - [ ] fcitx5-configtool 拆包，把 `kcm-fcitx` 拆出来
+ - [ ] fcitx5-configtool 拆包，把 `kcm-fcitx5` 拆出来
  - [ ] fcitx5-chinese-addons 拆包
  - [ ] Fedora 31 上的编译
 
