@@ -22,6 +22,9 @@ categories: 打包
 
 另外之前用了我的 [copr] 版本的人，请保证把里面的包卸载之后在进行安装，否则可能出现奇妙的冲突。
 
+虽然在别的发行版上面最新的 Fcitx 4/5 不能共存，但是在 Fedora 上能，rpm 能优雅的处理表面上的文件冲突。
+对于原因感兴趣的可见[群里面的讨论]的上下文。
+
 ## 环境变量和自启动
 ### 对于 X11 用户
 ``` Bash
@@ -74,6 +77,13 @@ $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
 
 当然要是你能判断是囧脸的锅，建议直接去上游找囧脸修。
 
+## TODO List
+ - [ ] fcitx5-configtool 拆包，把 `kcm-fcitx` 拆出来
+ - [ ] fcitx5-chinese-addons 拆包
+ - [ ] Fedora 31 上的编译
+
+_为什么现在不做，这些事情不复杂啊？_ ——懒
+
 ## 此处应该感谢[囧脸]
 CSSlayer（囧脸）对于打包做出了巨大贡献，包括但不限于：
 
@@ -94,3 +104,4 @@ CSSlayer（囧脸）对于打包做出了巨大贡献，包括但不限于：
 [囧脸的博客]: https://www.csslayer.info/wordpress/fcitx-dev/%e5%a6%82%e4%bd%95%e7%8e%b0%e5%9c%a8%e5%b0%b1%e5%9c%a8-arch-linux-%e7%94%a8%e4%b8%8a-fcitx-5/
 [快速打字的时候会出现部分内容显示不全]: https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/46
 [锁屏后解锁会出现两个 Indicator]: https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/47
+[群里面的讨论]: https://t.me/fedorazh/63996
