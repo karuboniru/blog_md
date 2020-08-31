@@ -82,7 +82,7 @@ $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
  - [ ] fcitx5-chinese-addons 拆包
  - [ ] Fedora 31 上的编译
 
-_为什么现在不做，这些事情不复杂啊？_ ——懒
+_为什么现在不做，这些事情不复杂啊？_ ——懒，但是要是你确实需要，[给我说一声]，我尽快😂
 
 ## 此处应该感谢[囧脸]
 CSSlayer（囧脸）对于打包做出了巨大贡献，包括但不限于：
@@ -105,3 +105,4 @@ CSSlayer（囧脸）对于打包做出了巨大贡献，包括但不限于：
 [快速打字的时候会出现部分内容显示不全]: https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/46
 [锁屏后解锁会出现两个 Indicator]: https://github.com/wengxt/gnome-shell-extension-kimpanel/issues/47
 [群里面的讨论]: https://t.me/fedorazh/63996
+[给我说一声]: mailto:yanqiyu@fedoraproject.org
