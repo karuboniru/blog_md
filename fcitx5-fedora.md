@@ -1,6 +1,7 @@
 ---
 title: 如何下周就在 Fedora 32 用上 Fcitx 5
 date: 2020-08-30 17:44:07
+updated: 2020-09-01 15:48:04
 tags: 
 categories: 打包
 ---
@@ -9,7 +10,7 @@ categories: 打包
 
 为什么是下周？——因为 Fedora 的 QA，**包最长会在 [Bodhi] 等一周，除非你们帮忙测试，点个 upvote** (๑•̀ㅂ•́)و✧。
 
-测试大概明天或者后天上线，想要参与就`dnf upgrade --enablerepo=updates-testing`来进行安装。
+测试大概明天或者后天上线，想要参与就`dnf install --enablerepo=updates-testing`来进行安装。
 
 ***
 
@@ -78,7 +79,7 @@ $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
 当然要是你能判断是囧脸的锅，建议直接去上游找囧脸修。
 
 ## TODO List
- - [ ] fcitx5-configtool 拆包，把 `kcm-fcitx5` 拆出来
+ - [x] fcitx5-configtool 拆包，把 `kcm-fcitx5` 拆出来: **已经在 rawhide 中完成，F32 再等等就 push**
  - [ ] fcitx5-chinese-addons 拆包
  - [ ] ~~Fedora 31 上的编译~~, 不会有了, 因为貌似 fmt 版本太老, 编译不过, 这个包 F31 Mass Rebuild 之后居然就没更新过. 虽然我可以 Bundle 一个 header-only 的 fmt.
 
