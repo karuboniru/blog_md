@@ -38,18 +38,28 @@ $ ln -s /etc/X11/xinit/xinput.d/fcitx5.conf ~/.xinputrc
 理论上**注销之后重新登陆**就会生效。
 
 ### 对于 Wayland 用户
-参阅 [Arch Wiki]，在 `~/.pam_environment` 添加
+参阅 [Arch Wiki]，在 `~/.pam_environment` 添加 (不推介，需要修改PAM设置以允许读取这个文件)
 ```
 INPUT_METHOD  DEFAULT=fcitx5
 GTK_IM_MODULE DEFAULT=fcitx5
 QT_IM_MODULE  DEFAULT=fcitx5
 XMODIFIERS    DEFAULT=\@im=fcitx5
 ```
+
+或者考虑修改全局设置, 写一个:
+```
+export INPUT_METHOD=fcitx5
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=im=fcitx5
+```
+放到 `/etc/profile.d`.
+
 然后运行（当然 `ln -s` 可以换成 `cp`）
 ``` Bash
 $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
 ```
-同样**注销之后重新登陆**就会生效。但是 Wayland 下可能不会很好使，听天由命吧。
+同样**注销之后重新登陆**就会生效。 ~~但是 Wayland 下可能不会很好使，听天由命吧。~~ 试验了，Wayland + Gnome，好使
 
 ## 一些其他的提示
 ### 对于 Gnome 用户
