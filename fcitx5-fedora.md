@@ -55,6 +55,12 @@ export XMODIFIERS=@im=fcitx5
 ```
 放到 `/etc/profile.d`.
 
+Gnome 用户也可以使用 gsettings
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx5'>}"
+```
+来设置环境变量。
+
 然后运行（当然 `ln -s` 可以换成 `cp`）
 ``` Bash
 $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
