@@ -50,6 +50,9 @@ sudo dnf install geant4 geant4-data geant4-devel geant4-examples
 就完成了安装。
 
 ### 编译安装
+{% note warning %}
+我不怎么建议自己编译安装，因为编译慢，安装的位置不好还需要手动设置一下环境变量
+{% endnote %}
 下载 Geant 4 的源代码，然后解压
 ```Bash
 mkdir build && cd build
