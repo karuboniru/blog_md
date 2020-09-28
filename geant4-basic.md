@@ -23,7 +23,7 @@ categories: 物理
 对于原生 Linux 用户，请忽略这一节。
 
 ### 启用 WSL 与安装 Linux
-请参阅[这篇文章][enable_wsl]的“为 WSL 做准备”章节，启用你的 Windows 下的 WSL。然后在[Fedora Remix for WSL 发表页面][rekease]下载那个`appxbundle`文件，双击安装这个软件包，然后打开安装的程序，按照提示进行设置用户名以及密码。
+请参阅[这篇文章][enable_wsl]的“为 WSL 做准备”章节，启用你的 Windows 下的 WSL。然后在[Fedora Remix for WSL 发表页面][release]下载那个`appxbundle`文件，双击安装这个软件包，然后打开安装的程序，按照提示进行设置用户名以及密码。
 
 ### 安装 XServer
 为了能正确使用 ROOT/Geant4 的图形界面，你需要安装 XServer。在[这里][Xsrv_install]下载，安装后启动，全部选择默认配置即可。
