@@ -55,11 +55,14 @@ export XMODIFIERS=@im=fcitx5
 ```
 放到 `/etc/profile.d`.
 
-Gnome 用户也可以使用 gsettings
+也可以写一个
 ```
-$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'fcitx5'>}"
+INPUT_METHOD=fcitx5
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS=@im=fcitx5
 ```
-来设置环境变量。
+放到 `~/.config/environment.d/00-fcitx5.conf`
 
 然后运行（当然 `ln -s` 可以换成 `cp`）
 ``` Bash
