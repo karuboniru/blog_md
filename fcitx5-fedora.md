@@ -27,35 +27,15 @@ categories: 打包
 对于原因感兴趣的可见[群里面的讨论]的上下文。
 
 ## 环境变量和自启动
-### 对于 X11 用户
+### 对于 KDE 用户
 ``` Bash
 $ sudo alternatives --config xinputrc
 ```
-即可修改全局输入法配置，但是要是你只想要修改自己的配置的话：
-```Bash
-$ ln -s /etc/X11/xinit/xinput.d/fcitx5.conf ~/.xinputrc
-```
-理论上**注销之后重新登陆**就会生效。
 
-### 对于 Wayland 用户
-参阅 [Arch Wiki]，在 `~/.pam_environment` 添加 (不推介，需要修改PAM设置以允许读取这个文件)
-```
-INPUT_METHOD  DEFAULT=fcitx5
-GTK_IM_MODULE DEFAULT=fcitx5
-QT_IM_MODULE  DEFAULT=fcitx5
-XMODIFIERS    DEFAULT=\@im=fcitx5
-```
+即可修改全局输入法配置。但是想要修改自己的输入法配置可以考虑 im-settings 或者下面的方法。
 
-或者考虑修改全局设置, 写一个:
-```
-export INPUT_METHOD=fcitx5
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
-```
-放到 `/etc/profile.d`.
-
-也可以写一个
+### 通用办法
+写一个
 ```
 INPUT_METHOD=fcitx5
 GTK_IM_MODULE=fcitx5
@@ -68,7 +48,9 @@ XMODIFIERS=@im=fcitx5
 ``` Bash
 $ ln -s /usr/share/applications/fcitx5.desktop ~/.config/autostart/
 ```
-同样**注销之后重新登陆**就会生效。 ~~但是 Wayland 下可能不会很好使，听天由命吧。~~ 试验了，Wayland + Gnome，好使
+同样**注销之后重新登陆**就会生效。 
+
+别的情况可以酌情尝试上述两种办法，应该至少有一种会生效。
 
 ## 一些其他的提示
 ### 对于 Gnome 用户
