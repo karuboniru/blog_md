@@ -1,10 +1,13 @@
 ---
 title: 如何下周就在 Fedora 32 用上 Fcitx 5
 date: 2020-08-30 17:44:07
-updated: 2020-09-01 15:48:04
+updated: 2020-11-06 16:41:10
 tags: 
 categories: 打包
 ---
+本文内容已经严重过时，请参阅 {% post_link fcitx5-fedora-updated 这篇更新的文章 %} 设置你的 fcitx5
+
+***
 
 一开始想了想要不要在标题写 Fedora，觉得还是必要的。因为目前只有 Arch Linux （和 Debian 和 Ubuntu）出于套近乎的关系有了 Fcitx 5 全家桶。
 
