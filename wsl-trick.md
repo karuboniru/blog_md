@@ -13,12 +13,10 @@ categories: 技术
 
 Linux 下有些程序会通过 dbus 来启动, 如果没有 dbus 的话就会出错或者花很长时间开个新的 dbus. 使用:
 ``` Bash
-if [ -z "$(pidof dbus-daemon)" ]; then
-    /usr/bin/dbus-launch --exit-with-x11 2>/dev/null  >~/.dbus.env
-fi
-export $(cat ~/.dbus.env)
+daemonize -e /tmp/dbus.log -o /tmp/dbus.log -p /tmp/dbus.pid -l /tmp/dbus.pid -a /usr/bin/dbus-daemon --address='unix:path=/tmp/dbus-path' --session --nofork  >>/dev/null 2>&1
+export DBUS_SESSION_BUS_ADDRESS='unix:path=/tmp/dbus-path'
 ```
-加到 `~/.bash_profile` 就可以在每次启动 wsl 实例时启动dbus, 然后让所有会话用这个 dbus 实例.
+加到 `~/.bash_profile` 就可以在每次启动 wsl 实例时启动dbus, 然后让所有会话用这个 dbus 实例. `/tmp/dbus-path` 可以相应的修改成你喜欢的路径
 
 ## 经过修改的 xdg-open
 
