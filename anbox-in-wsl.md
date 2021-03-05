@@ -92,7 +92,7 @@ ip rule add pref 32767 table local
 
 ## 效果
 
-![运行截图](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200404211503.webp)
+{% asset_img https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200404211503.webp 运行截图 %}
 
 
 ## 当前问题
