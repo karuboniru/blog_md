@@ -14,7 +14,8 @@ categories: 瞎折腾
 
 切换到 Cloudflare Pages 整体上很容易，在 [Pages] 页面点击那个大大的黄色的 Get Started 按钮，按照指引授权 GitHub 权限、选择构建使用的仓库、最后设置构建的命令就完成了迁移... 好吧，这是最简单的情况，适用于你的站点只需要最简单的命令即可构建时，例如下表中的框架：
 
-
+<center>
+  
 | 框架                         | 构建命令                            | 输出目录                    |
 | ---------------------------- | ----------------------------------- | --------------------------- |
 | Angular (Angular CLI)        | `ng build`                          | `dist`                      |
@@ -39,6 +40,7 @@ categories: 瞎折腾
 | Vue                          | `npm run build`                     | `public`                    |
 | VuePress                     | `vuepress build $directory`         | `$directory/.vuepress/dist` |
 
+</center>
 
 ### 我想要运行自定义脚本！
 
