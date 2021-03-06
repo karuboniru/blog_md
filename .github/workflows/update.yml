@@ -36,7 +36,7 @@ jobs:
       uses: peter-evans/create-pull-request@v3.8.2
       with:
         delete-branch: true
+        branch: blog_md/update
         token: ${{ secrets.GH_TOKEN }}
-        branch-suffix: short-commit-hash
         
         
