@@ -37,6 +37,6 @@ jobs:
       with:
         delete-branch: true
         token: ${{ secrets.GH_TOKEN }}
-        branch-suffix: blog_md
+        branch-suffix: short-commit-hash
         
         
