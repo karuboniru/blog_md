@@ -18,21 +18,24 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a set of commands using the runners shell
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: true # Checkout private submodules(themes or something else).
+        repository: karuboniru/blog_ci
+        
     - name: update blog-ci
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
-        mkdir -p ~/.ssh/
-        echo "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.email "3437889+karuboniru@users.noreply.github.com"
-        git config --global user.name "Commit bot"
-        git clone --recurse-submodules git@github.com:karuboniru/blog_ci.git
-        cd blog_ci/source/_posts
-        git pull https://github.com/karuboniru/blog_md.git master
-        cd ../..
-        git add .
-        git commit -m "update submodule by $GITHUB_RUN_NUMBER at blog_md"
-        git push
-        rm -rf ~/.ssh/
+        cd source
+        rm -rf _posts
+        git clone https://github.com/karuboniru/blog_md.git _posts
+        cd ..
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3.8.2
+      with:
+        delete-branch: true
+        token: ${{ secrets.GH_TOKEN }}
+        
+        
