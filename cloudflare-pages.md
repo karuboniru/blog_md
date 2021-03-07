@@ -3,6 +3,7 @@ title: 我是来吹 Cloudflare Pages 的
 date: 2021-03-06 11:53:53
 tags: 瞎折腾
 categories: 瞎折腾
+index_img: https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210306115901.png
 ---
 ## 迁移博客到 Cloudflare Pages
 
