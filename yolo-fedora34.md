@@ -10,7 +10,7 @@ index_img: https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/2021031511170
 Fedora 34 （在 2021 年 3 月 15 日）还处于 Prerelease 状态，虽然我使用过程没遇到严重问题，但是不建议新手盲目上测试版。
 {% endnote %}
 
-在邮件列表看了下 Fedora 34 的 [blocker bugs] 状态，感觉严重的问题基本上已经被解决了。加上现在我的机器有牛逼闪闪的 Btrfs 加成，再大的翻车都能回滚快照。
+在邮件列表看了下 Fedora 34 的 [blocker bugs] 状态，感觉严重的问题基本上已经被解决了。加上现在我的机器有牛逼闪闪的 Btrfs 加成，再大的翻车都能回滚快照。于是决定莽一把，升级 Fedora 34。
 
 ## 总之先搞一个快照
 顺便把快照传出去：
@@ -30,23 +30,29 @@ sudo dnf system-upgrade reboot
 ## 使用 Gnome 40 是一种怎样的体验
 说实话，第一眼看到 Gnome 40 的时候还是很喜欢这个设计的，
 ![](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113321.png)
-虽然比较浪费纵向空间，但是登陆就进入上图的截面确实比登陆就面对什么都没有的做面要好。
+虽然比较浪费纵向空间，但是好看啊。
 
-还有一个没怎么被翻译的 Tours 应用，设置翻译也缺一些火候。
+并且登陆就进入这个界面，比登陆就面对空无一物的桌面要好多了。
+
+还有一个没怎么被翻译的 Tour 应用，设置翻译也缺一些火候。想必是 Beta 版本的原因吧。
 {% gi 2 2 %}
 ![](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113443.png)
 ![](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113609.png)
 {% endgi %}
 
 ## 蹬蹬咚
-一切都是好的...知道我开始准备在 Telegram 吹水...
+一切都是好的...直到我开始准备在 Telegram 吹水...
 
-发现我的输入法 Panel 变回了 Fcitx5 的界面（而不是 kimpanel 的界面）。
+发现我的输入法 Panel 变回了 Fcitx5 的界面（而不是 kimpanel 的界面）。于是赶紧检查 Gnome 插件状态：
 ![痛苦面具](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315114401.jpg)
 
-好家伙，我的插件全部炸了。我真傻，真的，我单知道 @Sumomogal 说的 [Gnome 会炸插件]，却不知道会炸掉我的全家身当。救火要紧，赶紧去骚扰老K。
+好家伙，我的插件全部炸了。
 
-老K[瞬间修好了扩展]，总算是能愉快的输入了。别的插件陆陆续续提交 issue，但愿大家能早日复活。
+我真傻，真的，我单知道 @Sumomogal 说的 [Gnome 会炸插件]，却不知道会炸掉我的全家身当。
+
+救火要紧，赶紧去骚扰老K。
+
+老K[瞬间修好了扩展]，总算是能愉快的打字了。但愿别的插件能早日复活...
 
 [blocker bugs]: https://qa.fedoraproject.org/blockerbugs/milestone/34/beta/buglist
 [Gnome 会炸插件]: https://twitter.com/Sumomogal/status/1370576849084899331?s=20
