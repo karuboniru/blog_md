@@ -3,8 +3,6 @@ title: Switch to systemd-boot and Unified Kernel Image on Fedora
 date: 2021-04-30 11:32:57
 ---
 {% note danger %}
-Disclainer from [kowalski7cc's article] applies here:
-
 I am not responsible for bricked computers, system instabilities, dead cats, thermonuclear war or you getting fired because you lost important work.
 
 Please make a backup of your device or of the data, and make a boot drive in case of necessity. Do some research if you have any concerns about steps documented in this guide.
@@ -22,7 +20,7 @@ Ok... Since I want to sign secure boot on my own, without breaking Fedora's curr
 ENSURE YOU ARE ON UEFI BEFORE DOING THIS.
 {% endnote %}
 
-It is basicially same as [kowalski7cc's article] with minor midifications to make it work with Unified Kernel Image
+It is basically same as [kowalski7cc's article] with minor modifications to make it work with Unified Kernel Image
 
 ### Move efi mount point
 You may want to check if modifications to `/etc/fstab` is sanity.
@@ -44,7 +42,7 @@ sudo dnf remove grubby grub2\* shim\* memtest86\ && sudo rm -rf /boot/grub2 && s
 cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
 sudo bootctl install
 ```
-And you may unmount `/boot` now since it will no longer be used.
+And you may umount `/boot` and remove its fstab entry now since it will no longer be used.
 
 {% note danger %}
 DO NOT REBOOT UNTIL I TOLD YOU THAT YOU CAN.
