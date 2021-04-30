@@ -38,6 +38,7 @@ sudo mount /efi
 You may want to backup files at `/boot/efi` and `/boot` before this.
 ```Bash
 sudo mkdir /efi/$(cat /etc/machine-id)
+sudo rm /etc/dnf/protected.d/grub* /etc/dnf/protected.d/shim*   # needed in some cases, if next command won't run.
 sudo dnf remove grubby grub2\* shim\* memtest86\ && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
 cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
 sudo bootctl install
