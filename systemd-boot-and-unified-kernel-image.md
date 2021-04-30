@@ -63,12 +63,13 @@ Create file at `/etc/kernel/install.d/90-loaderentry.install` with contents in [
 The `dracut --kernel-cmdline "${BOOT_OPTIONS[*]}" -f ${noimageifnotneeded:+--noimageifnotneeded} --uefi "$LOADER_ENTRY" "$KERNEL_VERSION"` does the magic to enable Unified Kernel Image.
 
 ### Change generation of rescue image
-Create file at `/etc/kernel/install.d/51-dracut-rescue.install` with contents in [this](https://gist.github.com/karuboniru/2e6fb6dc48094a7bbd9671da42a83960)
+Create file at `/etc/kernel/install.d/51-dracut-rescue.install` with contents in [this](https://gist.github.com/karuboniru/2e6fb6dc48094a7bbd9671da42a83960), this is for building rescue entry in unified way.
 
 
 ## Reinstall kernel-core
 Reinstall your kernel image to make changes apply:
 ```Bash
+sudo dnf install binutils # needed by dracut to build kernel image
 sudo dnf reinstall $(rpm -qa|grep kernel-core)
 ```
 
