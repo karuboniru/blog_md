@@ -55,7 +55,7 @@ Do following:
 ```Bash
 sudo ln -s /dev/null /etc/kernel/install.d/50-dracut.install
 ```
-to disable default initrd generation and install, we are going to move this work in other scripts.
+to disable default initrd generation and installation, we are going to move this work in other scripts.
 
 ### Change installation of kernel image
 Create file at `/etc/kernel/install.d/90-loaderentry.install` with contents in [this](https://gist.github.com/karuboniru/d47b0a70f53614d90d30946745c33ab9)
