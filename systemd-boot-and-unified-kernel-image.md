@@ -58,12 +58,12 @@ sudo ln -s /dev/null /etc/kernel/install.d/50-dracut.install
 to disable default initrd generation and installation, we are going to move this work in other scripts.
 
 ### Change installation of kernel image
-Create file at `/etc/kernel/install.d/90-loaderentry.install` with contents in [this](https://gist.github.com/karuboniru/d47b0a70f53614d90d30946745c33ab9)
+Create file at `/etc/kernel/install.d/90-loaderentry.install` with contents [here](https://gist.github.com/karuboniru/d47b0a70f53614d90d30946745c33ab9)
 
 The `dracut --kernel-cmdline "${BOOT_OPTIONS[*]}" -f ${noimageifnotneeded:+--noimageifnotneeded} --uefi "$LOADER_ENTRY" "$KERNEL_VERSION"` does the magic to enable Unified Kernel Image.
 
 ### Change generation of rescue image
-Create file at `/etc/kernel/install.d/51-dracut-rescue.install` with contents in [this](https://gist.github.com/karuboniru/2e6fb6dc48094a7bbd9671da42a83960), this is for building rescue entry in unified way.
+Create file at `/etc/kernel/install.d/51-dracut-rescue.install` with contents [here](https://gist.github.com/karuboniru/2e6fb6dc48094a7bbd9671da42a83960), this is for building rescue entry in unified way.
 
 
 ## Reinstall kernel-core
