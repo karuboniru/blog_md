@@ -39,6 +39,7 @@ You may want to backup files at `/boot/efi` and `/boot` before this.
 ```Bash
 sudo mkdir /efi/$(cat /etc/machine-id)
 sudo rm /etc/dnf/protected.d/grub* /etc/dnf/protected.d/shim*   # needed in some cases, if next command won't run.
+# in case following command fails, delete /etc/dnf/protected.d/grub* and /etc/dnf/protected.d/shim*
 sudo dnf remove grubby grub2\* shim\* memtest86\ && sudo rm -rf /boot/grub2 && sudo rm -rf /boot/loader
 cat /proc/cmdline | cut -d ' ' -f 2- | sudo tee /etc/kernel/cmdline
 sudo bootctl install
@@ -59,7 +60,7 @@ to disable default initrd generation and installation, we are going to move this
 
 ### Change installation of kernel image
 Create file at `/etc/kernel/install.d/90-loaderentry.install` with contents [here](https://gist.github.com/karuboniru/d47b0a70f53614d90d30946745c33ab9)
-```
+```Bash
 #!/usr/bin/bash
 # -*- mode: shell-script; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
 # ex: ts=8 sw=4 sts=4 et filetype=sh
@@ -169,7 +170,7 @@ The `dracut --kernel-cmdline "${BOOT_OPTIONS[*]}" -f ${noimageifnotneeded:+--noi
 
 ### Change generation of rescue image
 Create file at `/etc/kernel/install.d/51-dracut-rescue.install` with contents [here](https://gist.github.com/karuboniru/2e6fb6dc48094a7bbd9671da42a83960), this is for building rescue entry in unified way.
-```
+```Bash
 #!/usr/bin/bash
 
 export LANG=C
