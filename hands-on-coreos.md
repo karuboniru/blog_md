@@ -3,7 +3,9 @@ title: 上手 Fedora CoreOS，以搭建代理为例
 date: 2021-05-06 23:32:57
 ---
 
-前几天，Vultr 的洛杉矶机房维护，我的主力代理自然就断掉了，于是临时启动了一个机器用来救急。虽然有一个脚本用来处理配置代理需要的步骤，但是因为脚本忘了写防火墙规则导致我迷惑了足足有半分钟（然后想起来我上次用这个脚本的时候也是手动 ssh 上去添加防火墙规则的）。退一步越想越气，于是突然想到有神奇的 [Fedora CoreOS] 好像正好适合搭代理这种简单并且让人懒得管的工作。
+前几天，Vultr 的洛杉矶机房维护，我的主力代理自然就断掉了，于是临时启动了一个机器用来救急。虽然有一个脚本用来处理配置代理需要的步骤，但是因为脚本忘了写防火墙规则导致我迷惑了足足有半分钟（然后想起来我上次用这个脚本的时候也是手动 ssh 上去添加防火墙规则的）。
+
+退一步越想越气，于是突然想到妮可艹提到过 [Fedora CoreOS] 很适合这类工作，顺便我正好学习下这东西怎么用。
 
 ## 在 Vultr 上通过 CoreOS 部署 V2ray
 
@@ -25,18 +27,18 @@ storage:
         inline: |
           {
             "inbounds": [
-            {
+              {
                 "port": <YOUR-PORT-HERE>,
                 "protocol": "vmess",
                 "settings": {
-                "clients": [
-                  {
-                        "id": "<MY-UUID-HERE>",
-                        "alterId": 64
-                  }   
-                ]
+                  "clients": [
+                    {
+                      "id": "<YOUR-UUID-HERE>",
+                      "alterId": 64
+                    }   
+                  ]
+                }
               }
-            }
             ],
             "outbounds": [
               {
@@ -227,6 +229,7 @@ OK，接下来就是肮脏的 workarounds 了
 
 ## 更改 ign 文件重新部署
 令人震惊的是，Vultr 不提供这个功能，他们的技术支持建议是 reserve 现在的 ip，应用到新部署的机器上...听着就很傻。于是只能曲线救国：
+
 ### 把真正的 ign 文件放到 GitHub Gist
 在 [Gist] 放下前面 butane 输出的 ign 文件（最好是 Secret Gist）。然后导出它的 raw 链接，一般格式是：`https://gist.githubusercontent.com/<username>/<id>/raw/<commit>/<name>.ign`，对应的写一个 fcc 文件，内容是
 ```Yaml
@@ -264,18 +267,18 @@ storage:
         inline: |
           {
             "inbounds": [
-            {
+              {
                 "port": <YOUR-PORT-HERE>,
                 "protocol": "vmess",
                 "settings": {
-                "clients": [
-                  {
-                        "id": "<YOUR-UUID-HERE>",
-                        "alterId": 64
-                  }   
-                ]
+                  "clients": [
+                    {
+                      "id": "<YOUR-UUID-HERE>",
+                      "alterId": 64
+                    }   
+                  ]
+                }
               }
-            }
             ],
             "outbounds": [
               {
