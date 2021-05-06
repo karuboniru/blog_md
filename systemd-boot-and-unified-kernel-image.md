@@ -59,12 +59,213 @@ to disable default initrd generation and installation, we are going to move this
 
 ### Change installation of kernel image
 Create file at `/etc/kernel/install.d/90-loaderentry.install` with contents [here](https://gist.github.com/karuboniru/d47b0a70f53614d90d30946745c33ab9)
+```
+#!/usr/bin/bash
+# -*- mode: shell-script; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
+# ex: ts=8 sw=4 sts=4 et filetype=sh
+# SPDX-License-Identifier: LGPL-2.1-or-later
+#
+# This file is part of systemd.
+#
+# systemd is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# systemd is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with systemd; If not, see <http://www.gnu.org/licenses/>.
+
+COMMAND="$1"
+KERNEL_VERSION="$2"
+ENTRY_DIR_ABS="$3"
+KERNEL_IMAGE="$4"
+INITRD_OPTIONS_START="5"
+
+MACHINE_ID=$KERNEL_INSTALL_MACHINE_ID
+
+BOOT_ROOT=${ENTRY_DIR_ABS%/$MACHINE_ID/$KERNEL_VERSION}
+BOOT_MNT=$(stat -c %m $BOOT_ROOT)
+ENTRY_DIR=${ENTRY_DIR_ABS#$BOOT_MNT}
+
+if [[ $COMMAND == remove ]]; then
+    rm -f "$BOOT_ROOT/loader/entries/$MACHINE_ID-$KERNEL_VERSION.conf"
+    rm -f "$BOOT_ROOT/loader/entries/$MACHINE_ID-$KERNEL_VERSION+"*".conf"
+    rm -f "$BOOT_ROOT/EFI/Linux/$KERNEL_VERSION-$MACHINE_ID.efi"
+    rm -f "$BOOT_ROOT/EFI/Linux/$KERNEL_VERSION-$MACHINE_ID+"*".efi"
+    exit 0
+fi
+
+if ! [[ $COMMAND == add ]]; then
+    exit 1
+fi
+
+if ! [[ $KERNEL_IMAGE ]]; then
+    exit 1
+fi
+
+if [[ -f /etc/os-release ]]; then
+    . /etc/os-release
+elif [[ -f /usr/lib/os-release ]]; then
+    . /usr/lib/os-release
+fi
+
+if ! [[ $PRETTY_NAME ]]; then
+    PRETTY_NAME="Linux $KERNEL_VERSION"
+fi
+
+if [[ -f /etc/kernel/cmdline ]]; then
+    read -r -d '' -a BOOT_OPTIONS < /etc/kernel/cmdline
+elif [[ -f /usr/lib/kernel/cmdline ]]; then
+    read -r -d '' -a BOOT_OPTIONS < /usr/lib/kernel/cmdline
+else
+    declare -a BOOT_OPTIONS
+
+    read -r -d '' -a line < /proc/cmdline
+    for i in "${line[@]}"; do
+        [[ "${i#initrd=*}" != "$i" ]] && continue
+        [[ "${i#BOOT_IMAGE=*}" != "$i" ]] && continue
+        BOOT_OPTIONS+=("$i")
+    done
+fi
+
+if [[ -f /etc/kernel/tries ]]; then
+    read -r TRIES </etc/kernel/tries
+    if ! [[ "$TRIES" =~ ^[0-9]+$ ]] ; then
+        echo "/etc/kernel/tries does not contain an integer." >&2
+        exit 1
+    fi
+    LOADER_ENTRY="$BOOT_ROOT/EFI/Linux/$KERNEL_VERSION-$MACHINE_ID+$TRIES.efi"
+else
+    LOADER_ENTRY="$BOOT_ROOT/EFI/Linux/$KERNEL_VERSION-$MACHINE_ID.efi"
+fi
+
+mkdir -p "${LOADER_ENTRY%/*}" || {
+    echo "Could not create loader entry directory '${LOADER_ENTRY%/*}'." >&2
+    exit 1
+}
+
+[ "$KERNEL_INSTALL_VERBOSE" -gt 0 ] && \
+    echo "Creating $LOADER_ENTRY"
+{
+unset noimageifnotneeded
+for ((i=0; i < "${#BOOT_OPTIONS[@]}"; i++)); do
+# shellcheck disable=SC1001
+if [[ ${BOOT_OPTIONS[$i]} == root\=PARTUUID\=* ]]; then
+noimageifnotneeded="yes"
+break
+fi
+done
+dracut --kernel-cmdline "${BOOT_OPTIONS[*]}" -f ${noimageifnotneeded:+--noimageifnotneeded} --uefi "$LOADER_ENTRY" "$KERNEL_VERSION"
+}
+exit 0
+```
 
 The `dracut --kernel-cmdline "${BOOT_OPTIONS[*]}" -f ${noimageifnotneeded:+--noimageifnotneeded} --uefi "$LOADER_ENTRY" "$KERNEL_VERSION"` does the magic to enable Unified Kernel Image.
 
 ### Change generation of rescue image
 Create file at `/etc/kernel/install.d/51-dracut-rescue.install` with contents [here](https://gist.github.com/karuboniru/2e6fb6dc48094a7bbd9671da42a83960), this is for building rescue entry in unified way.
+```
+#!/usr/bin/bash
 
+export LANG=C
+
+COMMAND="$1"
+KERNEL_VERSION="$2"
+ENTRY_DIR_ABS="$3"
+KERNEL_IMAGE="$4"
+
+
+dropindirs_sort()
+{
+    suffix=$1; shift
+    args=("$@")
+    files=$(
+        while (( $# > 0 )); do
+            for i in "${1}"/*"${suffix}"; do
+                [[ -f $i ]] && echo "${i##*/}"
+            done
+            shift
+        done | sort -Vu
+    )
+
+    for f in $files; do
+        for d in "${args[@]}"; do
+            if [[ -f "$d/$f" ]]; then
+                echo "$d/$f"
+                continue 2
+            fi
+        done
+    done
+}
+
+[[ -f /etc/os-release ]] && . /etc/os-release
+
+if [[ ${KERNEL_INSTALL_MACHINE_ID+x} ]]; then
+    MACHINE_ID=$KERNEL_INSTALL_MACHINE_ID
+elif [[ -f /etc/machine-id ]] ; then
+    read -r MACHINE_ID < /etc/machine-id
+fi
+
+if ! [[ $MACHINE_ID ]]; then
+    exit 0
+fi
+
+if [[ -f /etc/kernel/cmdline ]]; then
+    read -r -d '' -a BOOT_OPTIONS < /etc/kernel/cmdline
+elif [[ -f /usr/lib/kernel/cmdline ]]; then
+    read -r -d '' -a BOOT_OPTIONS < /usr/lib/kernel/cmdline
+else
+    declare -a BOOT_OPTIONS
+
+    read -r -d '' -a line < /proc/cmdline
+    for i in "${line[@]}"; do
+        [[ "${i#initrd=*}" != "$i" ]] && continue
+        BOOT_OPTIONS+=("$i")
+    done
+fi
+BOOT_ROOT=${ENTRY_DIR_ABS%/$MACHINE_ID/$KERNEL_VERSION}
+LOADER_ENTRY="$BOOT_ROOT/EFI/Linux/0-rescue-$MACHINE_ID.efi"
+BOOT_DIR_ABS="$BOOT_ROOT/EFI/Linux"
+ret=0
+
+case "$COMMAND" in
+    add)
+        [[ -f "$LOADER_ENTRY" ]] && exit 0
+
+        # source our config dir
+        for f in $(dropindirs_sort ".conf" "/etc/dracut.conf.d" "/usr/lib/dracut/dracut.conf.d"); do
+            if [[ -e $f ]]; then
+                # shellcheck disable=SC1090
+                . "$f"
+            fi
+        done
+
+        # shellcheck disable=SC2154
+        [[ $dracut_rescue_image != "yes" ]] && exit 0
+
+        [[ -d "$BOOT_DIR_ABS" ]] || mkdir -p "$BOOT_DIR_ABS"
+
+        dracut --kernel-cmdline "${BOOT_OPTIONS[*]}" -f --no-hostonly -a "rescue" --uefi "$LOADER_ENTRY" "$KERNEL_VERSION"
+
+        ((ret+=$?))
+        ;;
+
+    remove)
+        exit 0
+        ;;
+
+    *)
+        usage
+        ret=1;;
+esac
+
+exit $ret
+```
 
 ## Reinstall kernel-core
 Reinstall your kernel image to make changes apply:
