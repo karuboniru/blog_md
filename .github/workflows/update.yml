@@ -25,8 +25,6 @@ jobs:
         repository: karuboniru/blog_ci
         
     - name: update blog-ci
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
         cd source
         rm -rf _posts
@@ -38,5 +36,4 @@ jobs:
         delete-branch: true
         branch: blog_md/update
         token: ${{ secrets.GH_TOKEN }}
-        
         
