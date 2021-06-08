@@ -16,10 +16,8 @@ categories: 打包
  - 如果你是 `cp /usr/share/applications/fcitx5.desktop ~/.config/autostart/` 设置的自动启动的话，你应该不会感知到变化，但是我建议你删除旧的文件重新拷贝一个新的。
  - 无论如何，你都可以放弃原来的自动启动和环境变量，安装 fcitx5-autostart 软件包
 
-### 对应新安装的用户，相对于之前的文章而言，变化如下：
- - 如果 alternative 或者 imsettings 对于你来说有效，那么用它就好，具体可以参见 {% post_link fcitx5-fedora 前文 %}
- - 反之，你可以安装 fcitx5-autostart, 它应该能完成自动启动以及配置环境变量
- - 要是不幸，还是遇到了问题，请在 [群聊] 或者 [bugzilla] 反馈并寻求解决方案
+### 对应新安装的用户
+直接安装 `fcitx5`、`fcitx5-chinese-addons`、`fcitx5-gtk`、`fcitx5-qt`以及`fcitx5-configtool` 就能完成输入法的安装。安装 `fcitx5-autostart` 就能解决自启动。
 
 如果你只希望 per user 的配置而非类似于 fcitx5-autostart 那样针对所有用户，那么可以参见 {% post_link fcitx5-fedora 前文 %}，不过相应的把 `/usr/share/applications/fcitx5.desktop` 换成 `/usr/share/applications/org.fcitx.Fcitx5.desktop` 即可。
 
