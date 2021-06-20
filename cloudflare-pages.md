@@ -47,14 +47,12 @@ index_img: https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/2021030611590
 
 那你就放一个[自定义脚本]在你的仓库里面呗。构建命令就是 `./build.sh`, 记得加上 `+x` 权限。你的脚本任务就是把网页源代码变成站点的文件放到特定文件夹，在 Pages 设置里面你需要指定输出文件夹的路径。
 
-虽然你始终可以在让 CloudFlare 拉取生成好的站点，但是这样就会损失有
-
 ## 相对于使用 GitHub Actions 部署有什么好处/坏处？
 一方面 GitHub Actions 更快，Cloudflare Pages 的服务有时候会莫名其妙的卡几分钟到几十分钟在 `正在初始化构建环境` 阶段。但是 Cloudflare Pages 能优雅的处理 Pull Request 并且[提供预览页面]。
 
 总之 Cloudflare 家大业大，并且是专门做网络服务的，做网页托管 **应该** 不会太菜吧。
 
-另外 Cloudflare 的那个 Proxy 对于他们自己托管的页面不好使，可以看 [discord 聊天记录]，但是之后会修。还有些别的可能的坑可以看看 [已知问题]。
+另外 Cloudflare 的那个 Proxy 对于他们自己托管的页面不好使，可以看 [discord 聊天记录]，但是之后会修。还有些别的可能的坑可以看看[已知问题]。
 
 ## 关于网页跳转
 虽然 CloudFlare Page [提供一定的跳转功能]，但是这个跳转不能跨域名。于是想要做一个 `www.yanqiyu.info` 到 `yanqiyu.info` 的跳转就需要借助 Worker 来完成。新建一个 Worker 填入
