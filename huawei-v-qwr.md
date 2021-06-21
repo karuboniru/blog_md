@@ -35,6 +35,15 @@ date: 2021-06-21 13:32:57
 
 这事情大概华为会有人道歉吧，问题也不是很大。但愿华为会改进内部的评价机制，让员工不至于为了一两行的 patch 去浪费社区志愿者的时间。
 
+---
+
+当事人 Zhen Lei 做出了回复，基本上是平淡的解释了一下低创 commit 的原因，加上
+
+> I will continue to make more and more important contributions to the Linux community.
+
+这么一句万能的套话。
+
 [报道]: https://www.cnbeta.com/articles/tech/1143079.htm
 [原邮件]: https://lore.kernel.org/linux-btrfs/e78add0a-8211-86c3-7032-6d851c30f614@suse.com/T/#u
 [邮件]: https://lore.kernel.org/linux-btrfs/55b0c70b-f0c1-07e2-f8dd-073f4fdc8f07@gmx.com/T/#t
+[回复]: https://lore.kernel.org/linux-btrfs/0a9ae22c-44a0-6239-f61a-fa516f2a0de6@huawei.com/
