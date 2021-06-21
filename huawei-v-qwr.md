@@ -43,7 +43,14 @@ date: 2021-06-21 13:32:57
 
 这么一句万能的套话。
 
+---
+
+Qu Wenruo 也进行了[回复][回复Q]，介绍了怎么正确的处理这类小修改。另外给出了一些有价值的 Linux 改进的 idea。这事情基本就算是结束了。╮(￣▽￣)╭ ~~虽然当事人 Qu Wenruo 雷声大雨点小显得很弱鸡,但是也算是圆满的解决了问题。~~
+
+这个故事告诉我们，除非你有十足的把握，不要去跳脸专业人士，否则遇脾气不好的就会被喷。
+
 [报道]: https://www.cnbeta.com/articles/tech/1143079.htm
 [原邮件]: https://lore.kernel.org/linux-btrfs/e78add0a-8211-86c3-7032-6d851c30f614@suse.com/T/#u
 [邮件]: https://lore.kernel.org/linux-btrfs/55b0c70b-f0c1-07e2-f8dd-073f4fdc8f07@gmx.com/T/#t
 [回复]: https://lore.kernel.org/linux-btrfs/0a9ae22c-44a0-6239-f61a-fa516f2a0de6@huawei.com/
+[回复Q]: https://lore.kernel.org/lkml/47c66bc9-3fb9-5b02-0a89-4a51ce8f9943@suse.com/
