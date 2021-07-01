@@ -37,7 +37,7 @@ date: 2021-06-21 13:32:57
 
 ---
 
-当事人 Zhen Lei 做出了回复，基本上是平淡的解释了一下低创 commit 的原因，加上
+当事人 Zhen Lei 做出了[回复]，基本上是平淡的解释了一下低创 commit 的原因，加上
 
 > I will continue to make more and more important contributions to the Linux community.
 
