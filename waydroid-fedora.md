@@ -73,3 +73,35 @@ To begin using Waydroid.
 
 By default, you are getting wrong colors in Waydroid if you are on Gnome, you can workaround this by enabling inverted colors in Android Settings, but doing this will break Multi-window mode. The only 
 way to solve this is to make mutter compatible with android's frame buffer, related patches are merged upstream, just stay tuned and wait for update.
+
+A patched mutter can be used to fix those problems, you can find one for f35 in [copr](https://copr.fedorainfracloud.org/coprs/yanqiyu/mutter-bgr/) or build on your own with patch: 
+```patch
+--- mutter-41.0/src/wayland/meta-wayland-dma-buf.c	2021-09-19 21:37:45.655426700 +0800
++++ mutter-41.0-patched/src/wayland/meta-wayland-dma-buf.c	2021-10-26 15:56:05.667487234 +0800
+@@ -115,9 +115,15 @@ meta_wayland_dma_buf_realize_texture (Me
+     case DRM_FORMAT_XRGB8888:
+       cogl_format = COGL_PIXEL_FORMAT_RGB_888;
+       break;
++    case DRM_FORMAT_XBGR8888:
++      cogl_format = COGL_PIXEL_FORMAT_BGR_888;
++      break;
+     case DRM_FORMAT_ARGB8888:
+       cogl_format = COGL_PIXEL_FORMAT_ARGB_8888_PRE;
+       break;
++    case DRM_FORMAT_ABGR8888:
++      cogl_format = COGL_PIXEL_FORMAT_ABGR_8888_PRE;
++      break;
+     case DRM_FORMAT_XRGB2101010:
+       cogl_format = COGL_PIXEL_FORMAT_ARGB_2101010;
+       break;
+@@ -706,7 +712,9 @@ dma_buf_bind (struct wl_client *client,
+   wl_resource_set_implementation (resource, &dma_buf_implementation,
+                                   compositor, NULL);
+   send_modifiers (resource, DRM_FORMAT_ARGB8888);
++  send_modifiers (resource, DRM_FORMAT_ABGR8888);
+   send_modifiers (resource, DRM_FORMAT_XRGB8888);
++  send_modifiers (resource, DRM_FORMAT_XBGR8888);
+   send_modifiers (resource, DRM_FORMAT_ARGB2101010);
+   send_modifiers (resource, DRM_FORMAT_ABGR2101010);
+   send_modifiers (resource, DRM_FORMAT_XRGB2101010);
+```
