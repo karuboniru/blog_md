@@ -8,7 +8,7 @@ Ashmem and binder is what makes "Android kernel" different from traditional desk
 
 ### Use XanMod Kernel
 You can find XanMod Kernel from [Copr](https://copr.fedorainfracloud.org/coprs/rmnscnce/kernel-xanmod/), just follow instructions and you are all set. And you need to add
-`psi=0` to kernel command line during boot to avoid a `lmkd` crash.
+`psi=1` to kernel command line during boot to avoid a `lmkd` crash.
 
 ~~XanMod kernel is causing lmkd to crash, use self built kernel instead~~
 
