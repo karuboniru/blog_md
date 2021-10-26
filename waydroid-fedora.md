@@ -7,9 +7,10 @@ date: 2021-10-25 23:10:07
 Ashmem and binder is what makes "Android kernel" different from traditional desktop's. They are not built with Fedora's stock kernel for now ([But they are planning so](https://bugzilla.redhat.com/show_bug.cgi?id=1455411)). So we need to install a kernel with ashmem and binder support.
 
 ### Use XanMod Kernel
-~~You can find XanMod Kernel from [Copr](https://copr.fedorainfracloud.org/coprs/rmnscnce/kernel-xanmod/), just follow instructions and you are all set.~~
+You can find XanMod Kernel from [Copr](https://copr.fedorainfracloud.org/coprs/rmnscnce/kernel-xanmod/), just follow instructions and you are all set. And you need to add
+`psi=0` to kernel command line during boot to avoid a `lmkd` crash.
 
-XanMod kernel is causing lmkd to crash, use self built kernel instead
+~~XanMod kernel is causing lmkd to crash, use self built kernel instead~~
 
 ### Build Kernel with Ashmem and Binder
 Fedora don't ship kernel with Ashmem and Binder support, we need to build on our own. Before starting please confirm your secboot status is **off**, or your have set up 
