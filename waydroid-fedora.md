@@ -72,4 +72,4 @@ To begin using Waydroid.
 ~~Multi-window mode is not working for me, you can refer to [this issue](https://github.com/waydroid/waydroid/issues/131)~~
 
 By default, you are getting wrong colors in Waydroid if you are on Gnome, you can workaround this by enabling inverted colors in Android Settings, but doing this will break Multi-window mode. The only 
-way to solve this is to make mutter compatible with android's frame buffer, so blame Gnome people :(
+way to solve this is to make mutter compatible with android's frame buffer, related patches are merged upstream, just stay tuned and wait for update.
