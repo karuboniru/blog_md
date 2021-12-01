@@ -20,7 +20,7 @@ nmcli connection add type bridge-slave ifname enp3s0 master br0
 ... (and for all other lan ports)
 ```
 
-Theoretically, If your ISP provides ipv6-PD, you can just set `ipv6.method` to `shared` and remove the `ipv6.addresses` part, NetworkManager will do prefix delegation on lan network. If you are also setting `ipv4.method shared`, you can even ignore the step setting up dhcp and route advertisement, NetworkManager will do it for you in this0 case.
+Theoretically, If your ISP provides ipv6-PD, you can just set `ipv6.method` to `shared` and remove the `ipv6.addresses` part, NetworkManager will do prefix delegation on lan network. If you are also setting `ipv4.method shared`, you can even ignore the step setting up dhcp and route advertisement, NetworkManager will do it for you in this case.
 
 ## Setup firewall
 ### Enable masquerading on wan
