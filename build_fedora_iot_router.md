@@ -127,7 +127,7 @@ Type=simple
 ExecStart=/usr/bin/rpm-ostree upgrade --reboot
 StandardOutput=null
 
-/etc/systemd/system/os-update.timer
+# /etc/systemd/system/os-update.timer
 [Unit]
 Description=rpm-ostree Automatic Update Trigger with reboot
 ConditionPathExists=/run/ostree-booted
