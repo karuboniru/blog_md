@@ -138,7 +138,7 @@ OnCalendar=*-*-* 04:00:00
 [Install]
 WantedBy=timers.target
 ```
-And then, we can enable and start the service: `systemctl daemon-reload && systemctl enable --now os-update.service`
+And then, we can enable and start the service: `systemctl daemon-reload && systemctl enable --now os-update.timer`
 This will check updates on `4:00` local time daily and reboot if there is any updates.
 
 ## Auto update containers
