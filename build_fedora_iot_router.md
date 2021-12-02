@@ -3,7 +3,7 @@ title: Building a router based on Fedora IoT
 date: 2021-12-01 11:53:53
 ---
 
-I had enough of my old WiFi router that do hangs randomly, and hijacking your traffic when it thinks the network is down (diagnostics page). So I decided to build one router on myself. Compared to [Fedora Magazine article], I decided to do something new: use [Fedora IoT] instead of Fedora Server.
+I had enough of my old WiFi router that hangs randomly, and hijacks my traffic when it thinks the network is down (diagnostics page). So I decided to build one router on myself. Compared to [Fedora Magazine article], I decided to do something new: use [Fedora IoT] instead of Fedora Server.
 
 This guide is based on latest fedora iot edition and my setup is a multi ethernet small computer. Installing Fedora IoT is nothing special than a normal Fedora installation. So I will not explain the installation process here. I will only explain the router configuration.
 
@@ -43,6 +43,7 @@ firewall-cmd --new-policy=router --permanent
 firewall-cmd --policy=router --add-ingress-zone internal --permanent
 firewall-cmd --policy=router --add-egress-zone external --permanent
 firewall-cmd --policy=router --set-target ACCEPT --permanent
+sudo firewall-cmd --policy=router --add-rich-rule='rule tcp-mss-clamp value=pmtu' --permanent
 ```
 
 ### Disable SSH from wan (optional)
