@@ -43,7 +43,7 @@ firewall-cmd --new-policy=router --permanent
 firewall-cmd --policy=router --add-ingress-zone internal --permanent
 firewall-cmd --policy=router --add-egress-zone external --permanent
 firewall-cmd --policy=router --set-target ACCEPT --permanent
-sudo firewall-cmd --policy=router --add-rich-rule='rule tcp-mss-clamp value=pmtu' --permanent
+firewall-cmd --policy=router --add-rich-rule='rule tcp-mss-clamp value=pmtu' --permanent
 ```
 
 ### Disable SSH from wan (optional)
