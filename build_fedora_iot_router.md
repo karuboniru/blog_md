@@ -26,7 +26,7 @@ Theoretically, If your ISP provides ipv6-PD, you can just set `ipv6.method` to `
 ### Enable masquerading on wan
 ```
 firewall-cmd --zone=external --add-masquerade --permanent
-firewall-cmd --zone=external --add-rich-rule='rule family="ipv6" masquerade'
+firewall-cmd --zone=external --add-rich-rule='rule family="ipv6" masquerade' --permanent
 ```
 This allows masquerading for both ipv4 and ipv6.
 
