@@ -3,7 +3,7 @@ title: 莽一把，升级 Fedora 34
 date: 2021-03-15 11:16:54
 tags: 瞎折腾
 categories: 瞎折腾
-index_img: https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315111708.png
+index_img: https://cdn.yanqiyu.info/20210315111708.png
 ---
 
 {% note danger %}
@@ -24,27 +24,27 @@ sudo btrfs send /.snapshot/fedora-33 | pigz --best > /any/path/fedora-33.btrfs.g
 sudo dnf system-upgrade download --refresh --releasever=34
 sudo dnf system-upgrade reboot
 ```
-![超级多的包](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113127.png)
+![超级多的包](https://cdn.yanqiyu.info/20210315113127.png)
 平平稳稳的重启，祈祷不要翻车。
 
 ## 使用 Gnome 40 是一种怎样的体验
 说实话，第一眼看到 Gnome 40 的时候还是很喜欢这个设计的，
-![](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113321.png)
+![](https://cdn.yanqiyu.info/20210315113321.png)
 虽然比较浪费纵向空间，但是好看啊。
 
 并且登陆就进入这个界面，比登陆就面对空无一物的桌面要好多了。
 
 还有一个没怎么被翻译的 Tour 应用，设置翻译也缺一些火候。想必是 Beta 版本的原因吧。
 {% gi 2 2 %}
-![](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113443.png)
-![](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315113609.png)
+![](https://cdn.yanqiyu.info/20210315113443.png)
+![](https://cdn.yanqiyu.info/20210315113609.png)
 {% endgi %}
 
 ## 蹬蹬咚
 一切都是好的...直到我开始准备在 Telegram 吹水...
 
 发现我的输入法 Panel 变回了 Fcitx5 的界面（而不是 kimpanel 的界面）。于是赶紧检查 Gnome 插件状态：
-![痛苦面具](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210315114401.jpg)
+![痛苦面具](https://cdn.yanqiyu.info/20210315114401.jpg)
 
 好家伙，我的插件全部炸了。
 

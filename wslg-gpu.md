@@ -16,9 +16,9 @@ categories: 瞎折腾
 ## 体验
 
 {% gi 3 2-1%}
-    ![可用的输入法（fcitx5）](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210701201430.jpg)
-    ![GPU硬件加速可用](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210701201429.jpg)
-    ![Gnome 控制中心](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210701201422.jpg)
+    ![可用的输入法（fcitx5）](https://cdn.yanqiyu.info/20210701201430.jpg)
+    ![GPU硬件加速可用](https://cdn.yanqiyu.info/20210701201429.jpg)
+    ![Gnome 控制中心](https://cdn.yanqiyu.info/20210701201422.jpg)
 {% endgi %}
 
 基本达到了作为一个桌面可用的阶段，但是坑依旧很多，并且坑是各方位的...

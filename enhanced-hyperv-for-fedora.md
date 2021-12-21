@@ -23,9 +23,9 @@ PowerShell> Set-VM -VMName <your_vm_name> -EnhancedSessionTransportType HvSocket
 
 ## 效果
 {% gi 3 1-2 %}
-    ![结果](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200822104108.png)
-    ![登录界面](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200822103957.png)
-    ![增强会话选项](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200822103919.png)
+    ![结果](https://cdn.yanqiyu.info/20200822104108.png)
+    ![登录界面](https://cdn.yanqiyu.info/20200822103957.png)
+    ![增强会话选项](https://cdn.yanqiyu.info/20200822103919.png)
 {% endgi %}
 
 ## Detail: 你多干了啥

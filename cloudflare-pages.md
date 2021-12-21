@@ -3,13 +3,13 @@ title: 我是来吹 Cloudflare Pages 的
 date: 2021-03-06 11:53:53
 tags: 瞎折腾
 categories: 瞎折腾
-index_img: https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210306115901.png
+index_img: https://cdn.yanqiyu.info/20210306115901.png
 ---
 ## 迁移博客到 Cloudflare Pages
 
 > 薅羊毛，就要薅到底
 
-[![Cloudflare 介绍页面](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210306115901.png)](https://pages.dev/)
+[![Cloudflare 介绍页面](https://cdn.yanqiyu.info/20210306115901.png)](https://pages.dev/)
 
 突然发现 Cloudflare 的新静态网页托管服务结束了内测，变得可用。考虑到现在站点是 Github Pages + Cloudflare CDN 搭建，于是干脆一不做二不休换成 Cloudflare Pages 算了。 ~~没有中间商赚差价~~ 我也不用粗暴的在每次 GitHub Actions 之后做一次缓存清除（以免 Cloudflare 缓存了旧的页面而没有及时更新）。
 

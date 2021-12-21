@@ -66,7 +66,7 @@ waydroid show-full-ui
 To begin using Waydroid.
 
 ***
-![Playing Arknights via Waydroid](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20211025232040.png)
+![Playing Arknights via Waydroid](https://cdn.yanqiyu.info/20211025232040.png)
 
 ***
 ## Known problem

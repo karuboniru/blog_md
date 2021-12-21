@@ -1,7 +1,7 @@
 ---
 title: 在 WSL 2 下运行 Anbox
 date: 2020-03-27 12:53:49
-index_img: https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200404211503.webp
+index_img: https://cdn.yanqiyu.info/20200404211503.webp
 tags: 
 - 瞎折腾
 - WSL
@@ -92,7 +92,7 @@ ip rule add pref 32767 table local
 
 ## 效果
 
-![运行截图](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20200404211503.webp)
+![运行截图](https://cdn.yanqiyu.info/20200404211503.webp)
 
 
 ## 当前问题

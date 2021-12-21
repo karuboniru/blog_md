@@ -146,7 +146,7 @@ sudo dnf install butane
 butane fcos.fcc
 ```
 于是会输出一段混沌的 json 到终端，这就是 ign 文件，复制这段输出。转到 [Vultr (With Referral)]，创建服务器，选择区域并在 `Server Type` 处选择 CoreOS：
-![Vultr Server Type](https://cdn.jsdelivr.net/gh/karuboniru/blog_imgs@master/20210506233322.png)
+![Vultr Server Type](https://cdn.yanqiyu.info/20210506233322.png)
 把上面的 `butane fcos.fcc` 的输出粘贴到框框里面。然后按需修改配置，选择 `Deploy Now` 就完成了部署。记下 ip 配置好客户端就能用了。
 
 ***
