@@ -3,6 +3,9 @@ title: Waydroid on Fedora
 date: 2021-10-25 23:10:07
 ---
 
+There is a new [Waydroid build for fedora](https://copr.fedorainfracloud.org/coprs/aleasto/waydroid/) that don't need a custom kernel, by dropping `ashmem` requirements, you can check out there.
+
+***
 ## Waydroid need kernel with ashmem and binder
 Ashmem and binder is what makes "Android kernel" different from traditional desktop's. They are not built with Fedora's stock kernel for now ([But they are planning so](https://bugzilla.redhat.com/show_bug.cgi?id=1455411)). So we need to install a kernel with ashmem and binder support.
 
