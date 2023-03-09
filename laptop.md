@@ -85,7 +85,7 @@ if [ $battery_status -eq 1 ]; then
     fi
 ```
 
-### 电池“保守模式”
+### 电池“保护模式”
 我也不知道咋个翻译，就是长期插电用的时候不把电充满的设计，启动就是 `echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode` 关闭就是改成 `echo 0` 。
 
 ### 摄像头
