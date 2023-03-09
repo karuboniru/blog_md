@@ -22,7 +22,7 @@ categories: 败家
 小时候的心理阴影按下不表，总而言之，我直接就梭哈了 `Lenovo ThinkBook 14 G5+ IRH`，本想买锐龙的笔记本，但是因为现在只有皮套CPU，正儿八经的 `zen4` 还没影，于是只能转向Intel。又本着亏自己不能亏电脑的心态自己上了 `i7-13700H+32G` 的版本。
 
 ## 到手后
-{% gi 3 2-2%}
+{% gi 4 2-2%}
     ![外观](https://cdn.yanqiyu.info/laptop/photo_2023-03-09_12-01-27.jpg)
     ![左侧接口](https://cdn.yanqiyu.info/laptop/photo_2023-03-09_12-01-26.jpg)
     ![右侧接口](https://cdn.yanqiyu.info/laptop/photo_2023-03-09_12-01-24.jpg)
