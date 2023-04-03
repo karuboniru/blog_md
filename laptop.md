@@ -37,7 +37,9 @@ categories: 败家
 装之前，先启动一个Fedora的LiveUSB看看八字合不合。然后结论是——不合，简单的说就是闪烁，都闪瞎了。随便上网搜索了下，找到了原因是PSR(Panel Self Refresh)八字不合。
 
 ### i915 PSR bug
-搜寻过程不赘述，结论就是在这台机器上要在kernel cmdline加上 `i915.enable_psr2_sel_fetch=0` 才能正确的显示。算是给后人指路，虽然整个关了RSR也行，但是估计会耗电。
+~~搜寻过程不赘述，结论就是在这台机器上要在kernel cmdline加上 `i915.enable_psr2_sel_fetch=0` 才能正确的显示。算是给后人指路，虽然整个关了RSR也行，但是估计会耗电。~~
+
+无意间发现比较新的内核解决了这个问题，至少在 `38.20230403.0` 这个 `fedora/38/x86_64/testing/silverblue` 不会闪了。
 
 ### 电源管理支持
 简单的说，很不错。Fedora自带的 `power-profiles-daemon` 相当的开箱即用。提供的`platform_profile` 我检查了一下是和BIOS设置里面的三种功耗模式对应的。
