@@ -1,5 +1,5 @@
 ---
-title: Singleton Pattern are DANGEROUS (when across border of shared libraries)
+title: Singleton Patterns are DANGEROUS (when used across the border of shared libraries)
 date: 2023-11-12 00:05:00
 tags:
 - C++
@@ -7,7 +7,7 @@ categories: Coding
 math: false
 ---
 
-## Singleton Pattern are DANGEROUS 
+## Singleton Patterns are DANGEROUS 
 
 ... When you want to control the order of initialization/deinitialization of your objects across shared libraries.
 
@@ -31,7 +31,9 @@ sth::~sth(){
 static auto whatever = sth::instance().do_something();
 ```
 
-In this case, you might think that the order of initialization and deinitialization of the logger and the object is guaranteed. Since C++ standard seems to guarantee for objects with static storage duration that they are destructed as if `std::atexit` called is right after the completion of the constructor of the object to book the operation of destruction. The finish of construction of `logger` is sequenced before the finish of construction of `sth`. That runtime *should* be destructing `sth` before `logger`.
+In this case, you might think that the order of initialization and deinitialization of the logger and the object is guaranteed. Since C++ standard seems to guarantee that for objects with static storage duration they are destructed as if `std::atexit` called is right after the completion of the constructor of the object to book the operation of destruction. 
+
+The finish of construction of `logger` is sequenced before the finish of construction of `sth`. That runtime *should* be destructing `sth` before `logger`.
 
 ## Minimal Reproducible Example for the Issue
 
