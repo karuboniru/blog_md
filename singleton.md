@@ -75,7 +75,7 @@ It seems to be legal in C++ standard that the order don't matter when things goe
 
 And when it comes to the implementation of glibc, things related to destruction and dynamic libraries are:
 
- - The data structure controlling the destruct of all static objects is `exit_function_list` [structure](https://github.com/bminor/glibc/blob/d1dcb565a1fb5829f9476a1438c30eccc4027d04/stdlib/exit.h#L55-L60). This is basicially a chain list containing several `exit_function` structs. Which `exit_function` struct record function pointer to call and information indicating when to call.
+ - The data structure controlling the destruct of all static objects is [`exit_function_list`](https://github.com/bminor/glibc/blob/d1dcb565a1fb5829f9476a1438c30eccc4027d04/stdlib/exit.h#L55-L60). This is basicially a chain list containing several `exit_function` structs. Each `exit_function` struct records function pointer to call and information indicating when to call.
  - New entries is always added [to the end of the list](https://github.com/bminor/glibc/blob/d1dcb565a1fb5829f9476a1438c30eccc4027d04/stdlib/cxa_atexit.c#L79-L141)
  - When a global object [is done constructed, an entry will be added](https://github.com/bminor/glibc/blob/d1dcb565a1fb5829f9476a1438c30eccc4027d04/stdlib/cxa_atexit.c#L32-L70) to the `exit_function_list` structure to register the destructor of the object.
  - When `ld.so` loads any dynamic library, it will initialize all global objects from it. 
