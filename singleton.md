@@ -69,7 +69,9 @@ And run it:
     logger::~logger() you should not being putting logs anymore
     ```
 
-This seems to be legal in C++ standard that the order don't matter when things goes to beyond the boundary of shared libraries. There is some discussions [here](https://stackoverflow.com/questions/54562874/destruction-order-of-static-objects-in-shared-libraries) you can refer to.
+It seems to be legal in C++ standard that the order don't matter when things goes to beyond the boundary of shared libraries. There are some discussions [here](https://stackoverflow.com/questions/54562874/destruction-order-of-static-objects-in-shared-libraries) you can refer to.
+
+## What Happens in Runtime?
 
 And when it comes to the implementation of glibc, things related to destruction and dynamic libraries are:
 
